@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ahorro - Calculadoras Financieras</title>
+    <meta name="description" content="Calculadora de ahorro gratuita. Planifica tus objetivos de ahorro, establece metas y descubre cuánto tiempo necesitas para alcanzarlos.">
+    <meta name="keywords" content="calculadora ahorro, objetivos ahorro, plan ahorro, ahorrar dinero, meta financiera">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/ahorro.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Ahorro</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Ahorro</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>La <strong>calculadora de ahorro</strong> te ayuda a planificar cómo alcanzar tus objetivos financieros. Ya sea que quieras comprar un coche, hacer un viaje, o crear un fondo de emergencia, esta herramienta te mostrará el camino.</p>
+
+                        <!-- Calculator -->
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">💰 Calculadora de Ahorro</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateSavings();">
+                                <div class="form-group">
+                                    <label for="savings-initial">Ahorro Inicial (€)</label>
+                                    <input type="number" id="savings-initial" min="0" step="any" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="savings-monthly">Aportación Mensual (€)</label>
+                                    <input type="number" id="savings-monthly" min="1" step="any" value="300" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="savings-rate">Tipo de Interés Anual (%)</label>
+                                    <input type="number" id="savings-rate" min="0" max="20" step="0.1" value="3" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="savings-years">Período (años)</label>
+                                    <input type="number" id="savings-years" min="1" max="30" value="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="savings-goal">Objetivo de Ahorro (€) - Opcional</label>
+                                    <input type="number" id="savings-goal" min="0" step="any" placeholder="¿Cuánto quieres ahorrar?">
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Ahorro</button>
+                            </form>
+                            <div id="savings-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>La Regla 50/30/20</h2>
+                        <p>Una de las reglas más populares para gestionar tus finanzas personales es la Regla 50/30/20:</p>
+                        <ul>
+                            <li><strong>50% - Necesidades:</strong> Vivienda, comida, transporte, seguros</li>
+                            <li><strong>30% - Deseos:</strong> Ocio, entretenimiento, suscripciones</li>
+                            <li><strong>20% - Ahorro:</strong> Emergencias, jubilación, objetivos</li>
+                        </ul>
+
+                        <div class="adsense-slot in-article"></div>
+
+                        <h2>Cómo Crear un Plan de Ahorro</h2>
+
+                        <h3>1. Define tu Objetivo</h3>
+                        <p>Sé específico: ¿cuánto necesitas y para qué? Establece una fecha objetivo realista.</p>
+
+                        <h3>2. Calcula cuánto necesitas ahorrar</h3>
+                        <p>Usa la calculadora para ver si tu objetivo es alcanzable con tu capacidad de ahorro actual.</p>
+
+                        <h3>3. Automatiza tus ahorros</h3>
+                        <p>Configura una transferencia automática el día que cobres. "Págate a ti primero".</p>
+
+                        <h3>4.Reduce gastos innecesarios</h3>
+                        <p>Revisa suscripciones, gastos hormiga y busca alternativas más económicas.</p>
+
+                        <h2>Cuánto Ahorrar según tu Objetivo</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Objetivo</th>
+                                    <th>Importe Típico</th>
+                                    <th>Ahorro Mensual</th>
+                                    <th>Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fondo de emergencia</td>
+                                    <td>€3.000-6.000</td>
+                                    <td>€200-300</td>
+                                    <td>1-2 años</td>
+                                </tr>
+                                <tr>
+                                    <td>Coche usado</td>
+                                    <td>€8.000-15.000</td>
+                                    <td>€300-500</td>
+                                    <td>1-3 años</td>
+                                </tr>
+                                <tr>
+                                    <td>Viaje</td>
+                                    <td>€2.000-5.000</td>
+                                    <td>€150-300</td>
+                                    <td>1-2 años</td>
+                                </tr>
+                                <tr>
+                                    <td>Entrada vivienda</td>
+                                    <td>€30.000-60.000</td>
+                                    <td>€400-800</td>
+                                    <td>3-8 años</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Preguntas Frecuentes</h2>
+                        
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuánto debería tener en mi fondo de emergencia?</div>
+                                <div class="faq-answer">
+                                    <p>Lo ideal es tener entre 3 y 6 meses de gastos esenciales. Si eres autónomo o tu trabajo es inestable, considera hasta 12 meses.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Dónde debo guardar mi ahorro?</div>
+                                <div class="faq-answer">
+                                    <p>Para objetivos a corto plazo (menos de 3 años): cuentas de ahorro o depósitos. Para objetivos a largo plazo: fondos de inversión o planes de pensiones.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Es mejor pagar deudas o ahorrar?</div>
+                                <div class="faq-answer">
+                                    <p>Depende del tipo de deuda. Para deudas con intereses altos (tarjetas, préstamos rápidos),先去 paying them es prioritario. Para deudas bajas (hipoteca, préstamos con interés bajo), puede ser mejor ahorrar mientras.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="related-content">
+                            <h3>Contenido Relacionado</h3>
+                            <div class="related-grid">
+                                <div class="related-item">
+                                    <h4><a href="interes-compuesto.html">Interés Compuesto</a></h4>
+                                    <p>Haz crecer tu ahorro</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="jubilacion.html">Jubilación</a></h4>
+                                    <p>Planifica tu future</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="prestamo.html">Préstamo</a></li>
+                            <li><a href="jubilacion.html">Jubilación</a></li>
+                        </ul>
+                    </div>
+                    <div class="adsense-slot rectangle"></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Depósito a Plazo - Calculadoras Financieras</title>
+    <meta name="description" content="Calcula los intereses de depósitos a plazo fijo. Compara diferentes plazos y tipos de interés.">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/deposito.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Depósito a Plazo</span>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Depósito a Plazo</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 2 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>Los depósitos a plazo fijo son una forma segura de hacer crecer tu dinero con un rendimiento conocido de antemano. Esta calculadora te ayudará a proyectar tus ganancias.</p>
+
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">🏦 Calculadora de Depósito</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateDeposit();">
+                                <div class="form-group">
+                                    <label for="deposit-amount">Importe (€)</label>
+                                    <input type="number" id="deposit-amount" min="100" step="any" value="10000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deposit-rate">Tipo de Interés Anual (%)</label>
+                                    <input type="number" id="deposit-rate" min="0" max="20" step="0.1" value="3.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deposit-months">Plazo (meses)</label>
+                                    <input type="number" id="deposit-months" min="1" max="60" value="12" required>
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular</button>
+                            </form>
+                            <div id="deposit-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Tipos de Depósitos</h2>
+                        <ul>
+                            <li><strong>Depósito a la vista:</strong> Disponibilidad inmediata, menor rentabilidad</li>
+                            <li><strong>Depósito a plazo:</strong> Rentabilidad fija por período determinado</li>
+                            <li><strong>Depósito escalonado:</strong> Diferentes tipos según el plazo</li>
+                        </ul>
+
+                        <h2>Ventajas y Desventajas</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ventajas</th>
+                                    <th>Desventajas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Garantía hasta 100.000€ por depositante</td>
+                                    <td>Rentabilidad baja comparada con inversión</td>
+                                </tr>
+                                <tr>
+                                    <td>Rentabilidad conocida de antemano</td>
+                                    <td>El dinero no está disponible durante el plazo</td>
+                                </tr>
+                                <tr>
+                                    <td>Sin riesgo de pérdida del capital</td>
+                                    <td>Pierde contra inflación si es muy baja</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="faq-section">
+                            <h2>Preguntas Frecuentes</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué pasa si necesito el dinero antes?</div>
+                                <div class="faq-answer">
+                                    <p>Puedes perder parte de los intereses generados. Algunos depósitos permiten cancelación anticipada con penalización.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">¿Están garantizados los depósitos?</div>
+                                <div class="faq-answer">
+                                    <p>Sí, hasta 100.000€ por depositante y entidad a través del Fondo de Garantía de Depósitos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="ahorro.html">Ahorro</a></li>
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="prestamo.html">Préstamo</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
+

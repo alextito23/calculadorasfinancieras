@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Vacaciones - Calculadoras Financieras</title>
+    <meta name="description" content="Planifica el presupuesto de tus vacaciones. Calcula el coste total de tu viaje.">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/vacaciones.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Vacaciones</span>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Coste de Vacaciones</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 2 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>Planifica el presupuesto de tus vacaciones. Calcula el coste total de tu viaje incluyendo alojamiento, transporte, comida y actividades.</p>
+
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">✈️ Calculadora de Vacaciones</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateVacation();">
+                                <div class="form-group">
+                                    <label for="vac-travelers">Número de Viajeros</label>
+                                    <input type="number" id="vac-travelers" min="1" max="20" value="2" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vac-days">Días</label>
+                                    <input type="number" id="vac-days" min="1" max="90" value="7" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vac-accommodation">Alojamiento por Día (€)</label>
+                                    <input type="number" id="vac-accommodation" min="0" step="any" value="100">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vac-transport">Transporte Total (€)</label>
+                                    <input type="number" id="vac-transport" min="0" step="any" value="300">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vac-food">Comida por Persona/Día (€)</label>
+                                    <input type="number" id="vac-food" min="0" step="any" value="40">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vac-activities">Actividades por Persona (€)</label>
+                                    <input type="number" id="vac-activities" min="0" step="any" value="100">
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular</button>
+                            </form>
+                            <div id="vac-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Consejos para Ahorrar en Vacaciones</h2>
+                        <ul>
+                            <li><strong>Reserva con antelación:</strong> Los precios suelen ser más bajos</li>
+                            <li><strong>Viaja en temporada baja:</strong> Menos turismo y mejores precios</li>
+                            <li><strong>Compara alojamientos:</strong> Hay opciones para todos los presupuestos</li>
+                            <li><strong> Busca vuelos低价:</strong> Utiliza comparadores</li>
+                        </ul>
+                    </div>
+                </article>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="ahorro.html">Ahorro</a></li>
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="prestamo.html">Préstamo</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
+

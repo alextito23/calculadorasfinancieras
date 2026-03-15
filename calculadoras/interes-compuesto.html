@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Interés Compuesto - Calculadoras Financieras</title>
+    <meta name="description" content="Calculadora de interés compuesto gratuita. Descubre cómo hacer crecer tu dinero con el poder del interés compuesto y aportaciones periódicas.">
+    <meta name="keywords" content="calculadora interés compuesto, interés compuesto, calcular interés, inversión, crecimiento dinero">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/interes-compuesto.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Interés Compuesto</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Article Content -->
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Interés Compuesto</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 2 minutos</span>
+                        </div>
+                    </header>
+
+                    <!-- AdSense -->
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>El <strong>interés compuesto</strong> es una de las herramientas más poderosas para hacer crecer tu dinero. A diferencia del interés simple, donde solo ganas intereses sobre el capital inicial, con el interés compuesto ganas intereses sobre tus intereses.</p>
+
+                        <h2>¿Cómo funciona esta calculadora?</h2>
+                        <p>Nuestra calculadora de interés compuesto te permite proyectar el crecimiento de tu inversión considerando:</p>
+                        <ul>
+                            <li><strong>Capital inicial:</strong> La cantidad que vas a invertir inicialmente</li>
+                            <li><strong>Tasa de interés:</strong> El rendimiento anual esperado (%)</li>
+                            <li><strong>Período de tiempo:</strong> Los años que mantendrás la inversión</li>
+                            <li><strong>Aportaciones periódicas:</strong> Cantidad que añadirás mensualmente</li>
+                            <li><strong>Frecuencia de capitalización:</strong> Mensual, trimestral, semestral o anual</li>
+                        </ul>
+
+                        <!-- Calculator -->
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">📈 Calculadora de Interés Compuesto</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateCompoundInterest();">
+                                <div class="form-group">
+                                    <label for="ci-principal">Capital Inicial (€)</label>
+                                    <input type="number" id="ci-principal" min="0" step="any" value="10000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ci-rate">Tasa de Interés Anual (%)</label>
+                                    <input type="number" id="ci-rate" min="0" max="100" step="0.1" value="7" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ci-years">Período (años)</label>
+                                    <input type="number" id="ci-years" min="1" max="50" value="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ci-frequency">Frecuencia de Capitalización</label>
+                                    <select id="ci-frequency">
+                                        <option value="1">Anual</option>
+                                        <option value="2">Semestral</option>
+                                        <option value="4">Trimestral</option>
+                                        <option value="12" selected>Mensual</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ci-contribution">Aportación Mensual (€)</label>
+                                    <input type="number" id="ci-contribution" min="0" step="any" value="200">
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Interés Compuesto</button>
+                            </form>
+                            <div id="ci-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>La Magia del Interés Compuesto</h2>
+                        <p>Albert Einstein supuestamente llamó al interés compuesto la "octava maravilla del mundo". Y no es para menos: con una tasa de rentabilidad del 7% anual (rentabilidad histórica del mercado de valores a largo plazo), tu dinero se duplica aproximadamente cada 10 años.</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Años</th>
+                                    <th>Con €10.000 iniciales</th>
+                                    <th>Con €10.000 + €200/mes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10 años</td>
+                                    <td>€19.672</td>
+                                    <td>€38.613</td>
+                                </tr>
+                                <tr>
+                                    <td>20 años</td>
+                                    <td>€38.697</td>
+                                    <td>€114.349</td>
+                                </tr>
+                                <tr>
+                                    <td>30 años</td>
+                                    <td>€76.123</td>
+                                    <td>€274.536</td>
+                                </tr>
+                                <tr>
+                                    <td>40 años</td>
+                                    <td>€149.745</td>
+                                    <td>€603.036</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>*Calculado con una tasa del 7% anual y capitalización mensual.</p>
+
+                        <h2>Fórmula del Interés Compuesto</h2>
+                        <p>La fórmula básica del interés compuesto es:</p>
+                        <p style="font-size: 1.25rem; font-weight: bold; text-align: center; padding: 1rem; background: var(--bg-light); border-radius: 8px;">
+                            A = P(1 + r/n)^(nt)
+                        </p>
+                        <p>Donde:</p>
+                        <ul>
+                            <li><strong>A</strong> = Valor final</li>
+                            <li><strong>P</strong> = Capital inicial (principal)</li>
+                            <li><strong>r</strong> = Tasa de interés anual (en decimal)</li>
+                            <li><strong>n</strong> = Número de veces que se capitaliza al año</li>
+                            <li><strong>t</strong> = Tiempo en años</li>
+                        </ul>
+
+                        <h2>Consejos para Maximizar el Interés Compuesto</h2>
+                        <h3>1. Empieza lo antes posible</h3>
+                        <p>El tiempo es tu mayor aliado. Comenzar a invertir a los 25 años en lugar de a los 35 puede suponer una diferencia de cientos de miles de euros en tu jubilación.</p>
+
+                        <h3>2. Sé consistente</h3>
+                        <p>Las aportaciones mensuales regulares, aunque sean pequeñas, pueden generar una diferencia enorme a largo plazo gracias al efecto del interés compuesto.</p>
+
+                        <h3>3. Reinvierte los dividendos</h3>
+                        <p>Si inviertes en acciones o fondos que pagan dividendos, reinviértelos en lugar de cobrarlos. Esto acelera enormemente el crecimiento de tu patrimonio.</p>
+
+                        <h3>3. Mantén la paciencia</h3>
+                        <p>El interés compuesto requiere tiempo para mostrar su verdadero potencial. Los primeros años pueden parecer decepcionantes, pero los últimos son espectaculares.</p>
+
+                        <!-- AdSense -->
+                        <div class="adsense-slot in-article"></div>
+
+                        <h2>Productos que Utilizan Interés Compuesto</h2>
+                        <p>Múltiples productos financieros utilizan el interés compuesto:</p>
+                        <ul>
+                            <li><strong>Depósitos a plazo:</strong> Los intereses se acumulan y generan más intereses</li>
+                            <li><strong>Fondos de inversión:</strong> Las ganancias se reinvierten automáticamente</li>
+                            <li><strong>Plans de pensiones:</strong> El patrimonio crece con interés compuesto</li>
+                            <li><strong>ETFs de acumulación:</strong> Reinvierten dividendos automáticamente</li>
+                            <li><strong>Cuenta de ahorro:</strong> Los intereses se capitalizan periódicamente</li>
+                        </ul>
+
+                        <!-- Related Content -->
+                        <div class="related-content">
+                            <h3>Calculadoras Relacionadas</h3>
+                            <div class="related-grid">
+                                <div class="related-item">
+                                    <h4><a href="ahorro.html">Calculadora de Ahorro</a></h4>
+                                    <p>Planifica tus objetivos de ahorro</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="jubilacion.html">Calculadora de Jubilación</a></h4>
+                                    <p>Planifica tu будущее financiero</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="proyeccion-inversion.html">Calculadora de Inversión</a></h4>
+                                    <p>Proyecta tus inversiones</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ -->
+                        <div class="faq-section">
+                            <h2>Preguntas Frecuentes</h2>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuál es la diferencia entre interés simple y compuesto?</div>
+                                <div class="faq-answer">
+                                    <p>El interés simple se calcula solo sobre el capital inicial, mientras que el interés compuesto se calcula sobre el capital inicial más los intereses acumulados. Esto hace que el interés compuesto genere mayores rendimientos a largo plazo.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué tasa de rendimiento puedo esperar?</div>
+                                <div class="faq-answer">
+                                    <p>Depende del producto de inversión. Las cuentas de ahorro típicamente ofrecen 0,1-2% anual, los bonos entre 2-5%, y la bolsa histórica ha dado alrededor del 7% anual ajustada a inflación. Recuerda que mayores rendimientos suelen implicar mayor riesgo.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuánto tiempo necesito para ver resultados?</div>
+                                <div class="faq-answer">
+                                    <p>El interés compuesto necesita tiempo para mostrar su magia. Normalmente se necesitan al menos 5-10 años para ver resultados significativos. A partir de 20-30 años, el crecimiento se vuelve exponencial.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Puedo perder dinero con el interés compuesto?</div>
+                                <div class="faq-answer">
+                                    <p>El interés compuesto en sí mismo no te hace perder dinero, pero los productos de inversión donde lo aplicas sí pueden perder valor. Las acciones y fondos de inversión pueden bajar, mientras que los depósitos tienen garantía de capital.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuál es la mejor frecuencia de capitalización?</div>
+                                <div class="faq-answer">
+                                    <p>Cuanto más frecuente sea la capitalización, mayor será el rendimiento final. La capitalización mensual es mejor que la anual, pero la diferencia entre mensual y diaria es mínima para la mayoría de inversores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras Populares</h3>
+                        <ul class="widget-list">
+                            <li><a href="prestamo.html">Calculadora de Préstamo</a></li>
+                            <li><a href="hipoteca.html">Calculadora de Hipoteca</a></li>
+                            <li><a href="ahorro.html">Calculadora de Ahorro</a></li>
+                            <li><a href="jubilacion.html">Calculadora de Jubilación</a></li>
+                            <li><a href="inflacion.html">Calculadora de Inflación</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h3>Artículos Relacionados</h3>
+                        <ul class="widget-list">
+                            <li><a href="../blog/interes-compuesto.html">Guía de Interés Compuesto</a></li>
+                            <li><a href="../guias/invertir-principiantes.html">Invertir para Principiantes</a></li>
+                            <li><a href="../blog/empezar-invertir.html">Cómo Empezar a Invertir</a></li>
+                        </ul>
+                    </div>
+                    <div class="adsense-slot rectangle"></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="hipoteca.html">Hipoteca</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+

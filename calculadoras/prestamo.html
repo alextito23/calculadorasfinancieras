@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Préstamo - Calculadoras Financieras</title>
+    <meta name="description" content="Calculadora de préstamo gratuita. Calcula la cuota mensual, intereses totales y tabla de amortización de tu préstamo personal o hipotecario.">
+    <meta name="keywords" content="calculadora prestamo, cuota mensual, amortizacion, intereses prestamo, simulador prestamo">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/prestamo.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Préstamo</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Article Content -->
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Préstamo</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 3 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>La <strong>calculadora de préstamo</strong> te permite simular cualquier tipo de préstamo personal o hipotecario. Con ella podrás conocer la cuota mensual, el total de intereses que pagarás y ver una tabla de amortización completa.</p>
+
+                        <!-- Calculator -->
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">🏦 Calculadora de Préstamo</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateLoan();">
+                                <div class="form-group">
+                                    <label for="loan-principal">Importe del Préstamo (€)</label>
+                                    <input type="number" id="loan-principal" min="1000" step="any" value="20000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loan-rate">Tipo de Interés Anual (%)</label>
+                                    <input type="number" id="loan-rate" min="0" max="30" step="0.1" value="5.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loan-years">Plazo de Amortización (años)</label>
+                                    <input type="number" id="loan-years" min="1" max="40" value="5" required>
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Préstamo</button>
+                            </form>
+                            <div id="loan-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Tipos de Préstamos</h2>
+                        <p>Existen diversos tipos de préstamos, cada uno con características específicas:</p>
+
+                        <h3>Préstamo Personal</h3>
+                        <p>Son préstamos sin garantía específica, donde la aprobación depende principalmente de tu historial crediticio y capacidad de pago. Suelen tener importes de hasta €60.000 y plazos de hasta 10 años.</p>
+
+                        <h3>Préstamo Hipotecario</h3>
+                        <p>Utiliza una propiedad como garantía. Permite importar importes más altos (hasta el 80% del valor de la vivienda) y plazos más largos (hasta 30-40 años). El tipo de interés suele ser menor que en préstamos personales.</p>
+
+                        <h3>Préstamo Rápido</h3>
+                        <p>Pequeños importes (hasta €1.000-5.000) con aprobación inmediata. Tienen tipos de interés muy altos (50-200% TAE) y deben usarse con extrema precaución.</p>
+
+                        <h2>Cómo Calcular la Cuota de un Préstamo</h2>
+                        <p>La cuota mensual de un préstamo se calcula usando la fórmula de anualidad:</p>
+                        <p style="font-size: 1.25rem; font-weight: bold; text-align: center; padding: 1rem; background: var(--bg-light); border-radius: 8px;">
+                            M = P × [r(1+r)^n] / [(1+r)^n - 1]
+                        </p>
+                        <p>Donde:</p>
+                        <ul>
+                            <li><strong>M</strong> = Cuota mensual</li>
+                            <li><strong>P</strong> = Capital prestado (principal)</li>
+                            <li><strong>r</strong> = Tipo de interés mensual (anual/12)</li>
+                            <li><strong>n</strong> = Número de cuotas</li>
+                        </ul>
+
+                        <div class="adsense-slot in-article"></div>
+
+                        <h2>Qué Considerar Antes de Pedir un Préstamo</h2>
+                        
+                        <h3>1. Capacidad de Endeudamiento</h3>
+                        <p>La cuota mensual no debería superar el 35-40% de tus ingresos netos mensuales. Incluye todas tus deudas existentes (hipoteca, otros préstamos, tarjetas).</p>
+
+                        <h3>2. TAE vs TIN</h3>
+                        <p>La TAE (Tasa Anual Equivalente) incluye el tipo de interés nominal más las comisiones y el plazo. Es la cifra que debes usar para comparar préstamos, ya que es el coste real del crédito.</p>
+
+                        <h3>3. Comisiones</h3>
+                        <p>Comisiones típicas de préstamos:</p>
+                        <ul>
+                            <li><strong>Comisión de apertura:</strong> 0,5-2% del importe</li>
+                            <li><strong>Comisión de cancelación anticipada:</strong> 0,5-1% si es parcial, 0% si es total en muchos casos</li>
+                            <li><strong>Comisión por cambio de condiciones:</strong> Hasta 0,5%</li>
+                        </ul>
+
+                        <h3>4. Seguro de Protección de Pagos</h3>
+                        <p>Muchas entidades ofrecen seguros que cubren el pago del préstamo en caso de desempleo o incapacidad. Es opcional pero puede darte tranquilidad.</p>
+
+                        <h2>Tabla Comparativa de Préstamos</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Importe</th>
+                                    <th>Plazo</th>
+                                    <th>TIN</th>
+                                    <th>Cuota Mensual</th>
+                                    <th>Total Intereses</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>€10.000</td>
+                                    <td>5 años</td>
+                                    <td>5%</td>
+                                    <td>€188,71</td>
+                                    <td>€1.322</td>
+                                </tr>
+                                <tr>
+                                    <td>€20.000</td>
+                                    <td>5 años</td>
+                                    <td>5%</td>
+                                    <td>€377,42</td>
+                                    <td>€2.645</td>
+                                </tr>
+                                <tr>
+                                    <td>€20.000</td>
+                                    <td>10 años</td>
+                                    <td>5%</td>
+                                    <td>€212,13</td>
+                                    <td>€5.456</td>
+                                </tr>
+                                <tr>
+                                    <td>€50.000</td>
+                                    <td>10 años</td>
+                                    <td>4%</td>
+                                    <td>€506,40</td>
+                                    <td>€10.768</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Preguntas Frecuentes</h2>
+                        
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cómo puedo reducir el coste total de mi préstamo?</div>
+                                <div class="faq-answer">
+                                    <p>Puedes reducir el coste: negociando un menor tipo de interés, acortando el plazo (cuidado con la cuota), haciendo amortizaciones anticipadas, o comparando ofertas de múltiples bancos.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué es mejor: plazo largo o corto?</div>
+                                <div class="faq-answer">
+                                    <p>Un plazo corto paga menos intereses en total pero tiene cuotas más altas. Un plazo largo tiene cuotas más bajas pero paga más intereses. La mejor opción depende de tu capacidad de pago y objetivos financieros.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Puedo cambiar de banco mi préstamo?</div>
+                                <div class="faq-answer">
+                                    <p>Sí, puedes subrogar tu préstamo a otro banco. El nuevo banco paga el préstamo pendiente al anterior. Puede merecer la pena si consigues un tipo de interés significativamente menor.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué pasa si no puedo pagar mi préstamo?</div>
+                                <div class="faq-answer">
+                                    <p>Primero, contacta con tu banco inmediatamente. Pueden existir opciones como carencia temporal, ampliación de plazo, o renegociación. El impago tiene consecuencias graves para tu historial crediticio.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Content -->
+                        <div class="related-content">
+                            <h3>Calculadoras Relacionadas</h3>
+                            <div class="related-grid">
+                                <div class="related-item">
+                                    <h4><a href="hipoteca.html">Calculadora de Hipoteca</a></h4>
+                                    <p>Para préstamos hipotecarios</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="amortizacion-anticipada.html">Amortización Anticipada</a></h4>
+                                    <p>Calcula el ahorro提前</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="comparador-prestamos.html">Comparador</a></h4>
+                                    <p>Compara ofertas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras Populares</h3>
+                        <ul class="widget-list">
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="hipoteca.html">Hipoteca</a></li>
+                            <li><a href="ahorro.html">Ahorro</a></li>
+                            <li><a href="jubilacion.html">Jubilación</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h3>Guías de Préstamos</h3>
+                        <ul class="widget-list">
+                            <li><a href="../guias/guia-prestamos.html">Guía Completa de Préstamos</a></li>
+                            <li><a href="../blog/como-elegir-prestamo.html">Cómo Elegir un Préstamo</a></li>
+                        </ul>
+                    </div>
+                    <div class="adsense-slot rectangle"></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="hipoteca.html">Hipoteca</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+

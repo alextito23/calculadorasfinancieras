@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Proyección de Inversión - Calculadoras Financieras</title>
+    <meta name="description" content="Proyecta el valor futuro de tu cartera de inversiones. Simula diferentes escenarios.">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/proyeccion-inversion.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+                
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Proyección de Inversión</span>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Proyección de Inversión</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 2 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>Proyecta cómo crecerá tu inversión a lo largo del tiempo con aportaciones periódicas.</p>
+
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">📊 Calculadora de Proyección</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateProjection();">
+                                <div class="form-group">
+                                    <label for="proj-initial">Inversión Inicial (€)</label>
+                                    <input type="number" id="proj-initial" min="0" step="any" value="10000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="proj-monthly">Aportación Mensual (€)</label>
+                                    <input type="number" id="proj-monthly" min="0" step="any" value="200" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="proj-rate">Rentabilidad Anual (%)</label>
+                                    <input type="number" id="proj-rate" min="0" max="30" step="any" value="7" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="proj-years">Período (años)</label>
+                                    <input type="number" id="proj-years" min="1" max="50" value="20" required>
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Proyección</button>
+                            </form>
+                            <div id="proj-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Ejemplos de Proyección</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Años</th>
+                                    <th>Con €10.000 iniciales</th>
+                                    <th>Con €10.000 + €200/mes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10 años</td>
+                                    <td>€19.672</td>
+                                    <td>€38.613</td>
+                                </tr>
+                                <tr>
+                                    <td>20 años</td>
+                                    <td>€38.697</td>
+                                    <td>€114.349</td>
+                                </tr>
+                                <tr>
+                                    <td>30 años</td>
+                                    <td>€76.123</td>
+                                    <td>€274.536</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><em>*Calculado con una tasa del 7% anual.</em></p>
+                    </div>
+                </article>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="rentabilidad.html">Rentabilidad</a></li>
+                            <li><a href="dividendos.html">Dividendos</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Jubilación - Calculadoras Financieras</title>
+    <meta name="description" content="Calculadora de jubilación gratuita. Planifica tu retiro, descubre cuánto necesitas ahorrar y calcula tu pensión futura.">
+    <meta name="keywords" content="calculadora jubilacion, pension jubilacion, ahorro jubilacion, plan retraite, retirement planner">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/jubilacion.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+                
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Jubilación</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Jubilación</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>La <strong>calculadora de jubilación</strong> te ayuda a planificar tu retiro. Introduce tus datos actuales y descubre cuánto necesitarás ahorrar para mantener tu nivel de vida cuando dejes de trabajar.</p>
+
+                        <!-- Calculator -->
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">👴 Calculadora de Jubilación</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateRetirement();">
+                                <div class="form-group">
+                                    <label for="retire-current">Edad Actual</label>
+                                    <input type="number" id="retire-current" min="18" max="80" value="30" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="retire-age">Edad de Jubilación</label>
+                                    <input type="number" id="retire-age" min="50" max="70" value="65" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="retire-savings">Ahorros Actuales para Jubilación (€)</label>
+                                    <input type="number" id="retire-savings" min="0" step="any" value="10000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="retire-contribution">Aportación Mensual (€)</label>
+                                    <input type="number" id="retire-contribution" min="0" step="any" value="200" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="retire-return">Rentabilidad Esperada Anual (%)</label>
+                                    <input type="number" id="retire-return" min="0" max="15" step="any" value="6" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="retire-income">Pensión Deseada Mensual (€) - Opcional</label>
+                                    <input type="number" id="retire-income" min="0" step="any" placeholder="¿Cuánto quieres cobrar al mes?">
+                                </div>
+                                <div class="form-group">
+                                    <label for="retire-life">Esperanza de Vida</label>
+                                    <input type="number" id="retire-life" min="70" max="100" value="85">
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Jubilación</button>
+                            </form>
+                            <div id="retire-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>El Sistema de Pensiones en España</h2>
+                        <p>En España, la pensión pública de jubilación se calcula en función de las cotizaciones realizadas a lo largo de la vida laboral. Para 2024:</p>
+                        <ul>
+                            <li><strong>Edad de jubilación:</strong> 65 años (con 38 años cotizados) o 66 años y 6 meses (con menos)</li>
+                            <li><strong>Años mínimos para cobrar:</strong> 15 años cotizados</li>
+                            <li><strong>Base reguladora:</strong> Promedio de los últimos 25 años (2024)</li>
+                        </ul>
+
+                        <div class="adsense-slot in-article"></div>
+
+                        <h2>Cuánto Necesitarás para Jubilirte</h2>
+                        <p>La "regla del 4%" dice que puedes retirar el 4% anual de tu patrimonio acumulado sin agotarlo en 30 años. Esto significa:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pensión Mensual Deseada</th>
+                                    <th>Patrimonio Necesario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>€1.000</td>
+                                    <td>€300.000</td>
+                                </tr>
+                                <tr>
+                                    <td>€1.500</td>
+                                    <td>€450.000</td>
+                                </tr>
+                                <tr>
+                                    <td>€2.000</td>
+                                    <td>€600.000</td>
+                                </tr>
+                                <tr>
+                                    <td>€2.500</td>
+                                    <td>€750.000</td>
+                                </tr>
+                                <tr>
+                                    <td>€3.000</td>
+                                    <td>€900.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Productos para tu Jubilación</h2>
+
+                        <h3>Plan de Pensiones</h3>
+                        <p>Aportaciones deducibles hasta €1.500/año (límite conjunto con otros productos). Tributan como rendimiento del trabajo en el momento del rescate.</p>
+
+                        <h3>Plan de Ahorro a Largo Plazo (PEMS)</h3>
+                        <p>Nuevo producto con ventajas fiscales. Permite hasta €5.000/año de aportaciones con exención fiscal si se mantiene 5 años.</p>
+
+                        <h3>Fondos de Inversión</h3>
+                        <p>Mayor flexibilidad y可以选择 diferentes perfiles de riesgo. Tributan por ganancias patrimoniales en el momento del reembolso.</p>
+
+                        <h3>Inmuebles</h3>
+                        <p>La inversión en propiedad para alquiler puede generar ingresos pasivos, aunque requiere gestión activa.</p>
+
+                        <h2>Cuándo Comenzar a Ahorrar</h2>
+                        <p>El mejor momento para empezar a ahorrar para la jubilación es AHORA. El interés compuesto necesita tiempo para hacer su magia:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Empezar a los</th>
+                                    <th>Aportación hasta los 65</th>
+                                    <td>Total a los 65 (6% anual)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>25 años</td>
+                                    <td>€200/mes</td>
+                                    <td>€380.000</td>
+                                </tr>
+                                <tr>
+                                    <td>35 años</td>
+                                    <td>€200/mes</td>
+                                    <td>€188.000</td>
+                                </tr>
+                                <tr>
+                                    <td>45 años</td>
+                                    <td>€200/mes</td>
+                                    <td>€85.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Preguntas Frecuentes</h2>
+                        
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuánto debo ahorrar para la jubilación?</div>
+                                <div class="faq-answer">
+                                    <p>Una regla general es ahorrar al menos el 10-15% de tu salario bruto para jubilación. Esto incluye las aportaciones a tu plan de pensiones y otros ahorros para el retiro.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué rentabilidad puedo esperar?</div>
+                                <div class="faq-answer">
+                                    <p>A largo plazo (20+ años), los mercados de valores han dado rentabilidades reales (ajustadas a inflación) del 5-7% anual. Los bonos más conservador han dado 2-4%.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuándo puedo rescatar mi plan de pensiones?</div>
+                                <div class="faq-answer">
+                                    <p>Puedes rescatar a partir de los 60 años (o 65 si el plan tiene más de 10 años). El rescate puede ser en forma de capital, renta o mixt.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Me conviene jubilarme antes?</div>
+                                <div class="faq-answer">
+                                    <p>La jubilación anticipada reduce tu pensión significativamente (hasta un 30% si te jubilas a los 63 años). SoloCompensa si tienes ahorros suficientes para compensar la reducción.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="related-content">
+                            <h3>Contenido Relacionado</h3>
+                            <div class="related-grid">
+                                <div class="related-item">
+                                    <h4><a href="interes-compuesto.html">Interés Compuesto</a></h4>
+                                    <p>La clave del crecimiento</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="plan-pensiones.html">Guía de Planes de Pensiones</a></h4>
+                                    <p>Todo sobre este producto</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="ahorro.html">Ahorro</a></li>
+                            <li><a href="inflacion.html">Inflación</a></li>
+                        </ul>
+                    </div>
+                    <div class="adsense-slot rectangle"></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="jubilacion.html">Jubilación</a></li>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
+

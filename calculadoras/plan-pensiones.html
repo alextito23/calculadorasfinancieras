@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Plan de Pensiones - Calculadoras Financieras</title>
+    <meta name="description" content="Simula tu plan de pensiones y conoce su rentabilidad futura. Calcula cuánto acumularás.">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/plan-pensiones.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+                
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Plan de Pensiones</span>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Plan de Pensiones</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 2 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>Simula tu plan de pensiones y conoce el capital que tendrás acumulado cuando te jubiles.</p>
+
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">📊 Calculadora de Plan de Pensiones</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculatePensionPlan();">
+                                <div class="form-group">
+                                    <label for="pp-annual">Aportación Anual (€)</label>
+                                    <input type="number" id="pp-annual" min="0" step="any" value="1500" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pp-years">Años hasta Jubilación</label>
+                                    <input type="number" id="pp-years" min="1" max="50" value="30" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pp-rate">Rentabilidad Anual (%)</label>
+                                    <input type="number" id="pp-rate" min="0" max="15" step="any" value="5" required>
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular</button>
+                            </form>
+                            <div id="pp-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Ventajas Fiscales</h2>
+                        <ul>
+                            <li><strong>Deducible:</strong> Hasta €1.500/año de aportaciones</li>
+                            <li><strong>Reducción adicional:</strong> €1.250 si el conjointes también aporta</li>
+                            <li><strong>Tributación:</strong> Como rendimiento del trabajo en el rescate</li>
+                        </ul>
+
+                        <h2>Cuándo Rescatar</h2>
+                        <ul>
+                            <li>A partir de los 60 años (o 65 si el plan tiene más de 10 años)</li>
+                            <li>En forma de capital, renta o mixta</li>
+                            <li>Premio por长效Antigüedad</li>
+                        </ul>
+                    </div>
+                </article>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="jubilacion.html">Jubilación</a></li>
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="ahorro.html">Ahorro</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="jubilacion.html">Jubilación</a></li>
+                        <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
+

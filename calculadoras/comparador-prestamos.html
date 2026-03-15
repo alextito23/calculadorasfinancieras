@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Préstamos - Calculadoras Financieras</title>
+    <meta name="description" content="Compara diferentes ofertas de préstamos. Encuentra la mejor opción según tus necesidades.">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/comparador-prestamos.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+                
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Comparador de Préstamos</span>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Comparador de Préstamos</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 3 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>Compara hasta 3 préstamos diferentes para encontrar la mejor opción.</p>
+
+                        <div class="calculator-container">
+                            <h3>Introduce los datos de cada préstamo</h3>
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Concepto</th>
+                                        <th>Préstamo 1</th>
+                                        <th>Préstamo 2</th>
+                                        <th>Préstamo 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Importe</td>
+                                        <td><input type="number" id="comp1-amount" step="any" value="20000"></td>
+                                        <td><input type="number" id="comp2-amount" step="any" value="20000"></td>
+                                        <td><input type="number" id="comp3-amount" step="any" value="20000"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tipo (%)</td>
+                                        <td><input type="number" id="comp1-rate" value="5.5" step="0.1"></td>
+                                        <td><input type="number" id="comp2-rate" value="6" step="0.1"></td>
+                                        <td><input type="number" id="comp3-rate" value="4.5" step="0.1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plazo (años)</td>
+                                        <td><input type="number" id="comp1-years" step="any" value="5"></td>
+                                        <td><input type="number" id="comp2-years" step="any" value="5"></td>
+                                        <td><input type="number" id="comp3-years" step="any" value="5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Comisión apertura (%)</td>
+                                        <td><input type="number" id="comp1-fee" value="1" step="0.1"></td>
+                                        <td><input type="number" id="comp2-fee" value="0" step="0.1"></td>
+                                        <td><input type="number" id="comp3-fee" value="2" step="0.1"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn-calculate" onclick="compareLoans()">Comparar</button>
+                            <div id="comp-result" class="calculator-result" style="display: none; margin-top: 1rem;"></div>
+                        </div>
+
+                        <h2>Qué Comparar</h2>
+                        <ul>
+                            <li><strong>TAE:</strong> El coste real total incluyendo comisiones</li>
+                            <li><strong>Cuota mensual:</strong> Lo que pagarás cada mes</li>
+                            <li><strong>Total a pagar:</strong> Importe + intereses + comisiones</li>
+                            <li><strong>Productos vinculados:</strong> Obligatorios y opcionales</li>
+                        </ul>
+
+                        <h2>Consejos para Elegir</h2>
+                        <ul>
+                            <li>Compara siempre usando la TAE, no el TIN</li>
+                            <li>Ten en cuenta las comisiones de apertura y cancelación</li>
+                            <li>Considera tu capacidad de pago mensual</li>
+                            <li>No te fijes solo en la cuota más baja</li>
+                        </ul>
+                    </div>
+                </article>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="prestamo.html">Préstamo</a></li>
+                            <li><a href="hipoteca.html">Hipoteca</a></li>
+                            <li><a href="amortizacion-anticipada.html">Amortización</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="hipoteca.html">Hipoteca</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+    <script>
+        function compareLoans() {
+            const loans = [];
+            for (let i = 1; i <= 3; i++) {
+                const amount = parseFloat(document.getElementById('comp' + i + '-amount').value);
+                const rate = parseFloat(document.getElementById('comp' + i + '-rate').value);
+                const years = parseFloat(document.getElementById('comp' + i + '-years').value);
+                const fee = parseFloat(document.getElementById('comp' + i + '-fee').value) || 0;
+                
+                if (amount && rate && years) {
+                    const monthlyRate = (rate / 100) / 12;
+                    const totalPayments = years * 12;
+                    let monthlyPayment;
+                    if (monthlyRate === 0) {
+                        monthlyPayment = amount / totalPayments;
+                    } else {
+                        monthlyPayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / 
+                                        (Math.pow(1 + monthlyRate, totalPayments) - 1);
+                    }
+                    const totalPayment = monthlyPayment * totalPayments;
+                    const totalInterest = totalPayment - amount;
+                    const totalWithFee = totalPayment + (amount * fee / 100);
+                    
+                    loans.push({
+                        id: i,
+                        amount: amount,
+                        rate: rate,
+                        years: years,
+                        fee: fee,
+                        monthlyPayment: monthlyPayment,
+                        totalPayment: totalWithFee,
+                        totalInterest: totalInterest
+                    });
+                }
+            }
+            
+            if (loans.length === 0) {
+                alert('Por favor, introduce los datos de al menos un préstamo');
+                return;
+            }
+
+            // Find best option
+            const best = loans.reduce((a, b) => a.totalPayment < b.totalPayment ? a : b);
+
+            let html = '<h4>Resultados de la Comparación</h4><table><thead><tr><th>Concepto</th>';
+            loans.forEach(l => html += '<th>Préstamo ' + l.id + '</th>');
+            html += '</tr></thead><tbody>';
+            
+            html += '<tr><td>Cuota mensual</td>';
+            loans.forEach(l => html += '<td>' + l.monthlyPayment.toFixed(2) + '€</td>');
+            html += '</tr>';
+            
+            html += '<tr><td>Total a pagar</td>';
+            loans.forEach(l => html += '<td>' + l.totalPayment.toFixed(2) + '€</td>');
+            html += '</tr>';
+            
+            html += '<tr><td>Intereses totales</td>';
+            loans.forEach(l => html += '<td>' + l.totalInterest.toFixed(2) + '€</td>');
+            html += '</tr>';
+            
+            html += '</tbody></table>';
+            html += '<p style="margin-top: 1rem; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 8px;"><strong>Mejor opción:</strong> Préstamo ' + best.id + ' (Total: ' + best.totalPayment.toFixed(2) + '€)</p>';
+
+            document.getElementById('comp-result').innerHTML = html;
+            document.getElementById('comp-result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

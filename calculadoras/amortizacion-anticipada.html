@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Amortización Anticipada - Calculadoras Financieras</title>
+    <meta name="description" content="Calcula cuánto ahorras cancelando tu préstamo antes de tiempo. Simula amortización anticipada.">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/amortizacion-anticipada.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Amortización Anticipada</span>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Amortización Anticipada</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 2 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>Descubre cuánto puedes ahorrar en intereses cancelando tu préstamo antes de tiempo.</p>
+
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">💰 Calculadora de Amortización Anticipada</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateEarlyPayoff();">
+                                <div class="form-group">
+                                    <label for="ep-balance">Capital Pendiente (€)</label>
+                                    <input type="number" id="ep-balance" min="1" step="any" value="150000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ep-rate">Tipo de Interés (%)</label>
+                                    <input type="number" id="ep-rate" min="0" max="30" step="0.1" value="3.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ep-remaining">Meses Restantes</label>
+                                    <input type="number" id="ep-remaining" min="1" max="360" value="240" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ep-extra">Aportación Extra (€)</label>
+                                    <input type="number" id="ep-extra" min="1" step="any" value="10000" required>
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Ahorro</button>
+                            </form>
+                            <div id="ep-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Tipos de Amortización</h2>
+                        <ul>
+                            <li><strong>Reducir cuota:</strong> Mantienes el plazo pero reduces la cuota mensual</li>
+                            <li><strong>Reducir plazo:</strong> Mantienes la cuota pero terminas de pagar antes</li>
+                        </ul>
+
+                        <h2>Cuándo Conviene Amortizar</h2>
+                        <ul>
+                            <li>Cuando tienes ahorro extra disponible</li>
+                            <li>En los primeros años del préstamo (se ahorra más intereses)</li>
+                            <li>Cuando los tipos de interés han bajado</li>
+                        </ul>
+                    </div>
+                </article>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="prestamo.html">Préstamo</a></li>
+                            <li><a href="hipoteca.html">Hipoteca</a></li>
+                            <li><a href="comparador-prestamos.html">Comparador</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="hipoteca.html">Hipoteca</a></li>
+                        <li><a href="ahorro.html">Ahorro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
+

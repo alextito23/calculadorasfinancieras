@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hipoteca - Calculadoras Financieras</title>
+    <meta name="description" content="Calculadora de hipoteca gratuita. Simula tu cuota mensual, intereses totales y conoce el coste real de tu hipoteca incluyendo seguros e impuestos.">
+    <meta name="keywords" content="calculadora hipoteca, cuota mensual hipoteca, simulador hipoteca, intereses hipoteca, amortizacion">
+    <link rel="canonical" href="https://tusitio.com/calculadoras/hipoteca.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">💰</span>
+                    <span>CalculadorasFinancieras</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="index.html" class="active">Calculadoras</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                        <li><a href="../educacion-financiera/index.html">Educación</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Calculadoras</a>
+            <span>›</span>
+            <span>Hipoteca</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-content">
+                    <header class="article-header">
+                        <h1>Calculadora de Hipoteca</h1>
+                        <div class="article-meta">
+                            <span>Actualizado: Enero 2024</span>
+                            <span>Tiempo de uso: 3 minutos</span>
+                        </div>
+                    </header>
+
+                    <div class="adsense-slot"></div>
+
+                    <div class="article-body">
+                        <p>La <strong>calculadora de hipoteca</strong> te permite simular tu préstamo hipotecario incluyendo no solo la cuota del préstamo, sino también los gastos asociados como seguros e impuestos estimados. Así conocerás el coste real mensual de tu vivienda.</p>
+
+                        <!-- Calculator -->
+                        <div class="calculator-container">
+                            <h3 class="calculator-title">🏠 Calculadora de Hipoteca</h3>
+                            <form class="calculator-form" onsubmit="event.preventDefault(); calculateMortgage();">
+                                <div class="form-group">
+                                    <label for="mortgage-property">Valor de la Vivienda (€)</label>
+                                    <input type="number" id="mortgage-property" min="50000" step="any" value="300000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mortgage-down">Entrada (€)</label>
+                                    <input type="number" id="mortgage-down" min="0" step="any" value="60000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mortgage-rate">Tipo de Interés (%)</label>
+                                    <input type="number" id="mortgage-rate" min="0" max="15" step="0.1" value="3.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mortgage-years">Plazo (años)</label>
+                                    <input type="number" id="mortgage-years" min="5" max="40" value="30" required>
+                                </div>
+                                <button type="submit" class="btn-calculate">Calcular Hipoteca</button>
+                            </form>
+                            <div id="mortgage-result" class="calculator-result" style="display: none;"></div>
+                        </div>
+
+                        <h2>Tipos de Hipotecas</h2>
+
+                        <h3>Hipoteca Fija</h3>
+                        <p>El tipo de interés se mantiene constante durante toda la vida del préstamo. Ventaja: certeza total sobre la cuota. Inconveniente: suele tener tipos ligeramente más altos al inicio.</p>
+
+                        <h3>Hipoteca Variable</h3>
+                        <p>El interés se revisa periódicamente (normalmente annually) sumando un diferencial al índice de referencia (euríbor). Ventaja: puedes beneficiarte de bajadas de tipos. Inconveniente: incertidumbre sobre cuotas futuras.</p>
+
+                        <h3>Hipoteca Mixta</h3>
+                        <p>Combina características de ambas: tipo fijo los primeros años (ej: 5-10 años) y variable después. Buscando beneficiarse de las ventajas de ambas.</p>
+
+                        <div class="adsense-slot in-article"></div>
+
+                        <h2>Gastos Asociados a la Hipoteca</h2>
+                        <p>Al comprar una vivienda hay múltiples gastos adicionales al precio:</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Gasto</th>
+                                    <th>Importe</th>
+                                    <th>Notas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Entrada</td>
+                                    <td>20% mínimo</td>
+                                    <td>Normalmente 20-40%</td>
+                                </tr>
+                                <tr>
+                                    <td>Notaría</td>
+                                    <td>€600-1.200</td>
+                                    <td>Según escritura</td>
+                                </tr>
+                                <tr>
+                                    <td>Registro</td>
+                                    <td>€300-500</td>
+                                    <td>Inscripción propiedad</td>
+                                </tr>
+                                <tr>
+                                    <td>Gestoría</td>
+                                    <td>€200-400</td>
+                                    <td>Opcional en muchas zonas</td>
+                                </tr>
+                                <tr>
+                                    <td>Impuesto de Transmisiones (ITP)</td>
+                                    <td>4-10%</td>
+                                    <td>Vivienda segunda mano</td>
+                                </tr>
+                                <tr>
+                                    <td>IVA (vivienda nueva)</td>
+                                    <td>10%</td>
+                                    <td>Solo vivienda nueva</td>
+                                </tr>
+                                <tr>
+                                    <td>IAJD (actualmente reducido)</td>
+                                    <td>0-2%</td>
+                                    <td>Bonificado en muchas CCAA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Costes Mensuales Adicionales</h2>
+                        <p>Además de la cuota hipotecaria, debes presupuestar:</p>
+                        <ul>
+                            <li><strong>IBI (Impuesto de Bienes Inmuebles):</strong> 0,4-0,8% del valor catastral anual</li>
+                            <li><strong>Seguro de hogar:</strong> €150-400/año (obligatorio para hipoteca)</li>
+                            <li><strong>Seguro de vida:</strong> Opcional pero recomendado, €100-300/año</li>
+                            <li><strong>Mantenimiento comunidad:</strong> €50-150/mes según edificio</li>
+                        </ul>
+
+                        <h2>Consejos para tu Hipoteca</h2>
+
+                        <h3>1. Prepara una buena entrada</h3>
+                        <p>Cuanto mayor sea la entrada, menor será tu hipotecada y mejor условия conseguirás. Intenta tener al menos un 20-30% del valor de la vivienda.</p>
+
+                        <h3>2. Negocia las condiciones</h3>
+                        <p>Noacceptes la primera oferta. Los bancos tienen margen para negociar tipos, comisiones y productos vinculados. Compara al menos 3-4 ofertas.</p>
+
+                        <h3>3. Cuidado con los productos vinculados</h3>
+                        <p>Bancos ofrecen mejores tipos si contratas seguros, fondos o tarjetas. Asegúrate de calcular el coste real incluyendo estos productos obligatorios.</p>
+
+                        <h3>4. Considera amortizar anticipadamente</h3>
+                        <p>Si tienes capacidad de ahorro extra, amortizarreduces el capital pendiente y ahorras intereses. Los primeros años es más efectivo por el sistema de amortización francés.</p>
+
+                        <h2>Preguntas Frecuentes</h2>
+                        
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuánto necesito ganar para una hipoteca?</div>
+                                <div class="faq-answer">
+                                    <p>Generalmente, la cuota no debe superar el 35% de tus ingresos netos. Para una hipoteca de €240.000 (cuota ~€1.000/mes), necesitarías unos ingresos netos mínimos de €2.850/mes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué es mejor: plazo largo o corto?</div>
+                                <div class="faq-answer">
+                                    <p>Plazos cortos (15-20 años) pagan menos intereses pero tienen cuotas más altas. Plazos largos (25-30 años) tienen cuotas más asumibles pero pagan muchos más intereses en total.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuándo conviene hipotecarse a tipo fijo?</div>
+                                <div class="faq-answer">
+                                    <p>Cuando los tipos están históricamente bajos (como ahora),固定tipo fijo puede ser interesante para protegerse de futurasSubidas. También si valoras la certeza sobre tu presupuesto mensual.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">¿Puedo cambiar de hipoteca variable a fija?</div>
+                                <div class="faq-answer">
+                                    <p>Sí, puedes hacer una subrogación o novación modificando las condiciones. Los bancos suelen cobrar una comisión por cambiar de tipo (hasta 0,25% los primeros años).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Content -->
+                        <div class="related-content">
+                            <h3>Contenido Relacionado</h3>
+                            <div class="related-grid">
+                                <div class="related-item">
+                                    <h4><a href="../guias/comprar-vivienda.html">Guía para Comprar Vivienda</a></h4>
+                                    <p>Todo lo que necesitas saber</p>
+                                </div>
+                                <div class="related-item">
+                                    <h4><a href="../comparativas/hipotecas.html">Comparar Hipotecas</a></h4>
+                                    <p>Las mejores ofertas del mercado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Calculadoras</h3>
+                        <ul class="widget-list">
+                            <li><a href="prestamo.html">Préstamo Personal</a></li>
+                            <li><a href="interes-compuesto.html">Interés Compuesto</a></li>
+                            <li><a href="ahorro.html">Ahorro</a></li>
+                        </ul>
+                    </div>
+                    <div class="adsense-slot rectangle"></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="prestamo.html">Préstamo</a></li>
+                        <li><a href="hipoteca.html">Hipoteca</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="../guias/index.html">Guías</a></li>
+                        <li><a href="../comparativas/index.html">Comparativas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Calculadoras Financieras</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+</body>
+</html>
+
+
+
+
+
