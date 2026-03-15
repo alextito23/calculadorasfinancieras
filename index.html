@@ -21,6 +21,116 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/common.js"></script>
+    <script>
+    // Search data - contains all searchable content
+    const searchData = [
+        // Calculadoras
+        { title: 'Calculadora de Interés Compuesto', type: 'Calculadora', url: 'calculadoras/interes-compuesto.html', description: 'Calcula el crecimiento de tu inversión con interés compuesto' },
+        { title: 'Calculadora de Préstamo', type: 'Calculadora', url: 'calculadoras/prestamo.html', description: 'Calcula cuotas mensuales de préstamos personales e hipotecarios' },
+        { title: 'Calculadora de Hipoteca', type: 'Calculadora', url: 'calculadoras/hipoteca.html', description: 'Simula tu hipoteca y conoce el total de intereses' },
+        { title: 'Calculadora de Ahorro', type: 'Calculadora', url: 'calculadoras/ahorro.html', description: 'Planifica tus objetivos de ahorro' },
+        { title: 'Calculadora de Jubilación', type: 'Calculadora', url: 'calculadoras/jubilacion.html', description: 'Planifica tu jubilación y ahorro para el retiro' },
+        { title: 'Calculadora de Inflación', type: 'Calculadora', url: 'calculadoras/inflacion.html', description: 'Calcula el impacto de la inflación en tu dinero' },
+        { title: 'Calculadora de Depósito', type: 'Calculadora', url: 'calculadoras/deposito.html', description: 'Calcula intereses de depósitos a plazo fijo' },
+        { title: 'Calculadora de Objetivo de Ahorro', type: 'Calculadora', url: 'calculadoras/objetivo-ahorro.html', description: 'Descubre cuánto necesitas ahorrar mensualmente' },
+        { title: 'Comparador de Préstamos', type: 'Calculadora', url: 'calculadoras/comparador-prestamos.html', description: 'Compara diferentes ofertas de préstamos' },
+        { title: 'Calculadora de Amortización Anticipada', type: 'Calculadora', url: 'calculadoras/amortizacion-anticipada.html', description: 'Calcula el ahorro al amortizar提前' },
+        { title: 'Calculadora de Rentabilidad', type: 'Calculadora', url: 'calculadoras/rentabilidad.html', description: 'Mide la rentabilidad de tus inversiones' },
+        { title: 'Proyección de Inversión', type: 'Calculadora', url: 'calculadoras/proyeccion-inversion.html', description: 'Proyecta el crecimiento de tu inversión' },
+        { title: 'Calculadora de Dividendos', type: 'Calculadora', url: 'calculadoras/dividendos.html', description: 'Calcula ingresos por dividendos' },
+        { title: 'Calculadora Bruto a Neto', type: 'Calculadora', url: 'calculadoras/bruto-neto.html', description: 'Convierte salario bruto a neto' },
+        { title: 'Calculadora de IVA', type: 'Calculadora', url: 'calculadoras/iva.html', description: 'Calcula el IVA de tus facturas' },
+        { title: 'Calculadora de IRPF', type: 'Calculadora', url: 'calculadoras/irpf.html', description: 'Calcula las retenciones de IRPF' },
+        { title: 'Calculadora de Tarjetas', type: 'Calculadora', url: 'calculadoras/tarjetas.html', description: 'Compara tarjetas de crédito' },
+        { title: 'Calculadora de Vacaciones', type: 'Calculadora', url: 'calculadoras/vacaciones.html', description: 'Calcula el coste de tus vacaciones' },
+        { title: 'Calculadora de Seguro de Coche', type: 'Calculadora', url: 'calculadoras/seguro-coche.html', description: 'Compara seguros de coche' },
+        { title: 'Calculadora de Sucesiones', type: 'Calculadora', url: 'calculadoras/sucesiones.html', description: 'Calcula impuestos de sucesiones' },
+        { title: 'Calculadora de Sharpe', type: 'Calculadora', url: 'calculadoras/sharpe.html', description: 'Mide el ratio de Sharpe de tus inversiones' },
+        { title: 'Calculadora de Jubilación Anticipada', type: 'Calculadora', url: 'calculadoras/jubilacion-anticipada.html', description: 'Planifica tu jubilación提前' },
+        { title: 'Calculadora de Plan de Pensiones', type: 'Calculadora', url: 'calculadoras/plan-pensiones.html', description: 'Planifica tu plan de pensiones' },
+        { title: 'Calculadora de Ahorro para Jubilación', type: 'Calculadora', url: 'calculadoras/ahorro-jubilacion.html', description: 'Calcula cuánto necesitas ahorrar para jubilarte' },
+        
+        // Blog
+        { title: 'Guía de Interés Compuesto', type: 'Blog', url: 'blog/interes-compuesto.html', description: 'Aprende cómo el interés compuesto hace crecer tu dinero' },
+        { title: 'Cómo Empezar a Invertir', type: 'Blog', url: 'blog/empezar-invertir.html', description: 'Guía para principiantes sobre inversiones' },
+        { title: 'Errores Comunes en Inversión', type: 'Blog', url: 'blog/errores-inversion.html', description: 'Evita estos errores al invertir' },
+        { title: 'Fondo de Emergencia', type: 'Blog', url: 'blog/fondo-emergencia.html', description: 'Por qué necesitas un fondo de emergencia' },
+        { title: 'Fondos Indexados vs ETFs', type: 'Blog', url: 'blog/fondos-vs-etfs.html', description: 'Compara fondos indexados y ETFs' },
+        { title: 'Guía de Préstamos', type: 'Blog', url: 'blog/guia-prestamos.html', description: 'Todo lo que debes saber sobre préstamos' },
+        { title: 'Invertir en Bienes Raíces', type: 'Blog', url: 'blog/invertir-bienes-raices.html', description: 'Guía para invertir en propiedades' },
+        { title: 'Deudas Buenas y Malas', type: 'Blog', url: 'blog/deudas-buenas-malas.html', description: 'Aprende a distinguir entre deudas buenas y malas' },
+        { title: 'Negociar Salario', type: 'Blog', url: 'blog/negociar-salario.html', description: 'Consejos para negociar tu salario' },
+        { title: 'Planificación de la Jubilación', type: 'Blog', url: 'blog/jubilacion.html', description: 'Guía completa para planificar tu jubilación' },
+        
+        // Guías
+        { title: 'Guía de Finanzas Personales', type: 'Guía', url: 'guias/finanzas-personales.html', description: 'Aprende a gestionar tus finanzas' },
+        { title: 'Cómo Comprar una Vivienda', type: 'Guía', url: 'guias/comprar-vivienda.html', description: 'Todo sobre la compra de vivienda' },
+        { title: 'Invertir para Principiantes', type: 'Guía', url: 'guias/invertir-principiantes.html', description: 'Guía de inversión para principiantes' },
+        { title: 'Guía de Ahorro', type: 'Guía', url: 'guias/guia-ahorro.html', description: 'Estrategias para ahorrar dinero' },
+        { title: 'Guía de Inversión', type: 'Guía', url: 'guias/guia-inversion.html', description: 'Introducción a la inversión' }
+    ];
+
+    // Search functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        const searchForm = document.getElementById('search-form');
+        
+        if (!searchInput || !searchResults) return;
+        
+        // Handle form submission
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch(searchInput.value);
+        });
+        
+        // Handle input changes
+        searchInput.addEventListener('input', function() {
+            performSearch(this.value);
+        });
+        
+        // Close results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('active');
+            }
+        });
+        
+        function performSearch(query) {
+            if (query.length < 2) {
+                searchResults.classList.remove('active');
+                return;
+            }
+            
+            query = query.toLowerCase();
+            const results = searchData.filter(item => {
+                return item.title.toLowerCase().includes(query) || 
+                       item.description.toLowerCase().includes(query) ||
+                       item.type.toLowerCase().includes(query);
+            }).slice(0, 10);
+            
+            displayResults(results, query);
+        }
+        
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="search-no-results">No se encontraron resultados para "' + query + '"</div>';
+            } else {
+                searchResults.innerHTML = results.map(item => {
+                    let title = highlightMatch(item.title, query);
+                    let description = highlightMatch(item.description, query);
+                    return '<div class="search-result-item"><a href="' + item.url + '"><div class="result-type">' + item.type + '</div><div class="result-title">' + title + '</div><div class="result-description">' + description + '</div></a></div>';
+                }).join('');
+            }
+            searchResults.classList.add('active');
+        }
+        
+        function highlightMatch(text, query) {
+            const regex = new RegExp('(' + query + ')', 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+    });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -51,6 +161,16 @@
         <div class="container">
             <h1>Calculadoras Financieras Gratuitas</h1>
             <p>Herramientas profesionales para planificar tu futuro financiero. Calcula préstamos, hipotecas, intereses compuestos, jubilación y mucho más.</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <form class="search-form" id="search-form">
+                    <input type="text" class="search-input" id="search-input" placeholder="Buscar calculadoras, artículos, guías..." autocomplete="off">
+                    <button type="submit" class="search-btn">🔍 Buscar</button>
+                </form>
+                <div class="search-results" id="search-results"></div>
+            </div>
+            
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">50+</span>
