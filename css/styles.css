@@ -28,9 +28,6 @@
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-    
-    /* AdSense */
-    --adsense-bg: #1a1a1a;
 }
 
 /* Light Mode */
@@ -53,8 +50,6 @@ body.light-mode {
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    
-    --adsense-bg: #f9fafb;
 }
 
 /* Reset & Base */
@@ -388,42 +383,6 @@ a:hover {
 .stat-label {
     font-size: 0.9rem;
     opacity: 0.9;
-}
-
-/* ============================================
-   ADSENSE CONTAINERS
-   ============================================ */
-.adsense-slot {
-    background: var(--bg-white);
-    border: 1px dashed var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 1rem;
-    text-align: center;
-    margin: 2rem 0;
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.adsense-slot::before {
-    content: "ESPACIO PARA ANUNCIO AdSense";
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.adsense-slot.leaderboard {
-    min-height: 90px;
-}
-
-.adsense-slot.rectangle {
-    min-height: 250px;
-}
-
-.adsense-slot.in-article {
-    min-height: 250px;
 }
 
 /* ============================================
@@ -1292,7 +1251,6 @@ body.light-mode .site-footer {
 @media print {
     .site-header,
     .site-footer,
-    .adsense-slot,
     .sidebar {
         display: none;
     }
